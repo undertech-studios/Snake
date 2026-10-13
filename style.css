@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Shippori+Mincho:wght@300;400&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:           #f0ede8;
+  --canvas-bg:    #ffffff;
+  --shadow-soft:  rgba(0, 0, 0, 0.07);
+  --text-primary: #3a3530;
+  --text-muted:   #a09890;
+  --accent:       #7aab7a;
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Mono', monospace;
+  color: var(--text-primary);
+}
+
+body {
+  background-image:
+    radial-gradient(circle at 18% 28%, rgba(122,171,122,0.09) 0%, transparent 52%),
+    radial-gradient(circle at 82% 72%, rgba(180,155,130,0.07) 0%, transparent 52%);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+/* ── Cabecera ── */
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.label {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-weight: 300;
+}
+
+#score {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 34px;
+  font-weight: 300;
+  color: var(--text-primary);
+  min-width: 44px;
+  text-align: right;
+  transition: transform 0.12s ease;
+  display: inline-block;
+}
+
+#score.bump {
+  transform: scale(1.28);
+}
+
+/* ── Canvas ── */
+#gameCanvas {
+  display: block;
+  background: var(--canvas-bg);
+  border-radius: 20px;
+  box-shadow:
+    0 2px 4px  var(--shadow-soft),
+    0 10px 40px rgba(0, 0, 0, 0.07),
+    0 0 0 1px  rgba(0, 0, 0, 0.045);
+}
+
+/* ── Pie ── */
+.footer {
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.18em;
+  text-transform: lowercase;
+}
